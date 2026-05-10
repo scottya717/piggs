@@ -1,12 +1,13 @@
 import asyncio
 import logging
 import random
+import os
 from datetime import datetime, time, timedelta
 from telegram import Update
 from telegram.ext import Application, CommandHandler, ContextTypes
 
-BOT_TOKEN = "ВСТАВЬ_СВОЙ_ТОКЕН_СЮДА"
-CHAT_ID = 123456789
+BOT_TOKEN = os.environ.get("TOKEN") 
+CHAT_ID = os.environ.get("ID")
 
 logging.basicConfig(
     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s", level=logging.INFO
